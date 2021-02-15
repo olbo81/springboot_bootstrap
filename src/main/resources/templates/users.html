@@ -140,8 +140,7 @@
                                             <div class="row">
                                                 <div class="col-sm-3"></div>
                                                 <div class="col-sm-6">
-
-                                                    <form th:action="@{/admin/saveUser}"
+                                                    <form th:action="@{/admin/users/{userId}(userId=${user.id})}"
                                                           th:method="post" th:object="${user}"
                                                           th:id="${'EditForm' + user.id}">
 
@@ -203,12 +202,12 @@
                                                                    name="password"
                                                                    id="editPassword"
                                                                    value=""
-                                                            placeholder="New password" required>
+                                                                   placeholder="New password">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="font-weight-bold"
                                                                    for="editRoles">Roles</label>
-                                                            <select multiple size="2" class="form-control"
+                                                            <select multiple size="3" class="form-control"
                                                                     id="editRoles"
                                                                     name="userRoles" required>
                                                                 <option
@@ -219,6 +218,86 @@
                                                                 </option>
                                                             </select>
                                                         </div>
+
+
+<!--                                                    <form th:action="@{/admin/saveUser}"-->
+<!--                                                          th:method="post" th:object="${user}"-->
+<!--                                                          th:id="${'EditForm' + user.id}">-->
+
+<!--                                                        <div class="form-group">-->
+<!--                                                            <label class="font-weight-bold"-->
+<!--                                                                   for="showId">ID</label>-->
+<!--                                                            <input type="text"-->
+<!--                                                                   name="id"-->
+<!--                                                                   id="showId"-->
+<!--                                                                   class="form-control"-->
+<!--                                                                   th:value="${user.id}"-->
+<!--                                                                   readonly>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="form-group">-->
+<!--                                                            <label class="font-weight-bold"-->
+<!--                                                                   for="editName">Name</label>-->
+<!--                                                            <input type="text"-->
+<!--                                                                   name="name"-->
+<!--                                                                   id="editName"-->
+<!--                                                                   class="form-control"-->
+<!--                                                                   th:value="${user.name}"-->
+<!--                                                                   required>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="form-group">-->
+<!--                                                            <label class="font-weight-bold"-->
+<!--                                                                   for="editSurname">Surname</label>-->
+<!--                                                            <input type="text"-->
+<!--                                                                   name="surname"-->
+<!--                                                                   id="editSurname"-->
+<!--                                                                   class="form-control"-->
+<!--                                                                   th:value="${user.surname}"-->
+<!--                                                                   required>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="form-group">-->
+<!--                                                            <label class="font-weight-bold"-->
+<!--                                                                   for="editName">Phone</label>-->
+<!--                                                            <input type="text"-->
+<!--                                                                   name="phone"-->
+<!--                                                                   id="editPhone"-->
+<!--                                                                   class="form-control"-->
+<!--                                                                   th:value="${user.phone}"-->
+<!--                                                                   required>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="form-group">-->
+<!--                                                            <label class="font-weight-bold"-->
+<!--                                                                   for="editEmail">Email</label>-->
+<!--                                                            <input type="text"-->
+<!--                                                                   name="email"-->
+<!--                                                                   id="editEmail"-->
+<!--                                                                   class="form-control"-->
+<!--                                                                   th:value="${user.email}"-->
+<!--                                                                   required>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="form-group">-->
+<!--                                                            <label class="font-weight-bold"-->
+<!--                                                                   for="editPassword">Password</label>-->
+<!--                                                            <input type="password"-->
+<!--                                                                   class="form-control"-->
+<!--                                                                   name="password"-->
+<!--                                                                   id="editPassword"-->
+<!--                                                                   value=""-->
+<!--                                                            placeholder="New password" required>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="form-group">-->
+<!--                                                            <label class="font-weight-bold"-->
+<!--                                                                   for="editRoles">Roles</label>-->
+<!--                                                            <select multiple size="2" class="form-control"-->
+<!--                                                                    id="editRoles"-->
+<!--                                                                    name="userRoles" required>-->
+<!--                                                                <option-->
+<!--                                                                        th:each="role : ${roles}"-->
+<!--                                                                        th:value="${role.role}"-->
+<!--                                                                        th:text="${role.role}"-->
+<!--                                                                        th:selected="${#lists.contains(user.roles, role)}">-->
+<!--                                                                </option>-->
+<!--                                                            </select>-->
+<!--                                                        </div>-->
                                                     </form>
                                                 </div>
                                                 <div class="col-sm-3"></div>
