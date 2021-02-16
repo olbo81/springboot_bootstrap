@@ -1,7 +1,6 @@
 package com.boleg.spring.springboot.springboot_bootstrap.dao;
 
 
-
 import com.boleg.spring.springboot.springboot_bootstrap.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 

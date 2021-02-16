@@ -22,10 +22,14 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public List<Role> getAllRoles() { return roleRepository.findAll(); }
+    public List<Role> getAllRoles() {
+        return roleRepository.findAll();
+    }
 
     @Override
-    public void saveRole(Role role) { roleRepository.save(role); }
+    public void saveRole(Role role) {
+        roleRepository.save(role);
+    }
 
     @Override
     public void deleteRoleById(Long id) {
@@ -36,7 +40,7 @@ public class RoleServiceImpl implements RoleService {
     public Role getRoleById(Long id) {
         Role role = null;
         Optional<Role> optional = roleRepository.findById(id);
-        if(optional.isPresent()) {
+        if (optional.isPresent()) {
             role = optional.get();
         }
         return role;

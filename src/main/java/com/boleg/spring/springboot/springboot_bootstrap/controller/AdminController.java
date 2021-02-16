@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,7 +39,7 @@ public class AdminController {
     }
 
     @PostMapping("/users")
-    public String createUser(@ModelAttribute("user") User user,
+    public String createUser(@Valid @ModelAttribute("user") User user,
                              @RequestParam(value = "rolesNames") String[] roles) {
         Set<Role> rolesSet = new HashSet<>();
         for (String roleName : roles) {
@@ -49,20 +50,9 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-//    @PostMapping("/users")
-//    public String createUser(@ModelAttribute("user") User user, @RequestParam(value = "rolesNames") String[] roles) {
-//        Set<Role> rolesSet = new HashSet<>();
-//        for (String roleName : roles) {
-//            rolesSet.add(roleService.getByRoleName(roleName));
-//        }
-//        user.setRoles(rolesSet);
-//        userService.saveUser(user);
-//        return "redirect:/admin";
-//    }
-
     @PostMapping("/users/{userId}")
     public String updateUser(@PathVariable("userId") Long id, @ModelAttribute("user") User user,
-                         @RequestParam(value = "userRoles") String[] roles) {
+                             @RequestParam(value = "userRoles") String[] roles) {
         Set<Role> rolesSet = new HashSet<>();
         for (String roleName : roles) {
             rolesSet.add(roleService.getByRoleName(roleName));
@@ -77,6 +67,4 @@ public class AdminController {
         userService.deleteUserById(id);
         return "redirect:/admin";
     }
-
-
 }

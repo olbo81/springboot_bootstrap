@@ -14,13 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 
-//    private UserService userService;
-//
-//    @Autowired
-//    public UserController(UserService userService) {
-//        this.userService = userService;д
-//    }
-
     @GetMapping()
     public String user(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("user", user);

@@ -1,7 +1,6 @@
 package com.boleg.spring.springboot.springboot_bootstrap.service;
 
 
-
 import com.boleg.spring.springboot.springboot_bootstrap.entity.User;
 
 import java.util.List;

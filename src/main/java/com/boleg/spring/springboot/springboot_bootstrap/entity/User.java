@@ -4,6 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
@@ -27,6 +28,7 @@ public class User implements UserDetails {
     @Column(name = "phone")
     private String phone;
 
+    @Email
     @Column(name = "email")
     private String email;
 
@@ -141,16 +143,6 @@ public class User implements UserDetails {
 
     @Override
     public String toString() {
-//        return "User{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", surname='" + surname + '\'' +
-//                ", phone='" + phone + '\'' +
-//                ", email='" + email + '\'' +
-//                ", password='" + password + '\'' +
-//                ", roles=" + roles +
-//                '}';
-
         return roles.toString();
     }
 

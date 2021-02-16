@@ -2,7 +2,6 @@ package com.boleg.spring.springboot.springboot_bootstrap.service;
 
 
 import com.boleg.spring.springboot.springboot_bootstrap.dao.UserRepository;
-import com.boleg.spring.springboot.springboot_bootstrap.entity.Role;
 import com.boleg.spring.springboot.springboot_bootstrap.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -36,31 +35,31 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void saveUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
+        if (userRepository.findByEmail(user.getEmail()) == null) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            userRepository.save(user);
+        } else try {
+            throw new Exception("Duplicate email!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void updateUser(User user) {
         if (user.getId() == null) {
             try {
-                throw new Exception ("User not have ID!");
+                throw new Exception("User not have ID!");
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         User oldUser = getUserById(user.getId());
-            if (user.getPassword().equals("") || user.getPassword() == null) {
-                user.setPassword(oldUser.getPassword());
-            } else {
-                user.setPassword(passwordEncoder.encode(user.getPassword()));
-            }
-//        Set<Role> roleSet = new HashSet<>();
-//        for (String roleName : roles) {
-//            roleSet.add(roleService.getByRoleName(roleName));
-//        }
-//
-//        user.setRoles(roleSet);
+        if (user.getPassword().equals("") || user.getPassword() == null) {
+            user.setPassword(oldUser.getPassword());
+        } else {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+        }
         userRepository.save(user);
     }
 
