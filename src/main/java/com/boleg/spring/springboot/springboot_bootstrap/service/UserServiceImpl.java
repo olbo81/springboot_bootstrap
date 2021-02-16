@@ -11,10 +11,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
+
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -38,11 +37,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     public void saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        Set<Role> roleSet = new HashSet<>();
-//        for (String roleName : roles) {
-//            roleSet.add(roleService.getByRoleName(roleName));
-//        }
-//        user.setRoles(roleSet);
         userRepository.save(user);
     }
 
@@ -69,27 +63,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 //        user.setRoles(roleSet);
         userRepository.save(user);
     }
-
-//    @Override
-//    public User saveUser(User user, String[] roles) {
-//        if (user.getId() != null) {
-//            User oldUser = getUserById(user.getId());
-//            if (user.getPassword().equals("") || user.getPassword() == null) {
-//                user.setPassword(oldUser.getPassword());
-//            } else {
-//                user.setPassword(passwordEncoder.encode(user.getPassword()));
-//            }
-//        } else {
-//            user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        }
-//        Set<Role> roleSet = new HashSet<>();
-//        for (String roleName : roles) {
-//            roleSet.add(roleService.getByRoleName(roleName));
-//        }
-//        user.setRoles(roleSet);
-//        userRepository.save(user);
-//        return user;
-//    }
 
     @Override
     public User getUserById(Long id) {

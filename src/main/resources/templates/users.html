@@ -218,86 +218,6 @@
                                                                 </option>
                                                             </select>
                                                         </div>
-
-
-<!--                                                    <form th:action="@{/admin/saveUser}"-->
-<!--                                                          th:method="post" th:object="${user}"-->
-<!--                                                          th:id="${'EditForm' + user.id}">-->
-
-<!--                                                        <div class="form-group">-->
-<!--                                                            <label class="font-weight-bold"-->
-<!--                                                                   for="showId">ID</label>-->
-<!--                                                            <input type="text"-->
-<!--                                                                   name="id"-->
-<!--                                                                   id="showId"-->
-<!--                                                                   class="form-control"-->
-<!--                                                                   th:value="${user.id}"-->
-<!--                                                                   readonly>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="form-group">-->
-<!--                                                            <label class="font-weight-bold"-->
-<!--                                                                   for="editName">Name</label>-->
-<!--                                                            <input type="text"-->
-<!--                                                                   name="name"-->
-<!--                                                                   id="editName"-->
-<!--                                                                   class="form-control"-->
-<!--                                                                   th:value="${user.name}"-->
-<!--                                                                   required>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="form-group">-->
-<!--                                                            <label class="font-weight-bold"-->
-<!--                                                                   for="editSurname">Surname</label>-->
-<!--                                                            <input type="text"-->
-<!--                                                                   name="surname"-->
-<!--                                                                   id="editSurname"-->
-<!--                                                                   class="form-control"-->
-<!--                                                                   th:value="${user.surname}"-->
-<!--                                                                   required>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="form-group">-->
-<!--                                                            <label class="font-weight-bold"-->
-<!--                                                                   for="editName">Phone</label>-->
-<!--                                                            <input type="text"-->
-<!--                                                                   name="phone"-->
-<!--                                                                   id="editPhone"-->
-<!--                                                                   class="form-control"-->
-<!--                                                                   th:value="${user.phone}"-->
-<!--                                                                   required>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="form-group">-->
-<!--                                                            <label class="font-weight-bold"-->
-<!--                                                                   for="editEmail">Email</label>-->
-<!--                                                            <input type="text"-->
-<!--                                                                   name="email"-->
-<!--                                                                   id="editEmail"-->
-<!--                                                                   class="form-control"-->
-<!--                                                                   th:value="${user.email}"-->
-<!--                                                                   required>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="form-group">-->
-<!--                                                            <label class="font-weight-bold"-->
-<!--                                                                   for="editPassword">Password</label>-->
-<!--                                                            <input type="password"-->
-<!--                                                                   class="form-control"-->
-<!--                                                                   name="password"-->
-<!--                                                                   id="editPassword"-->
-<!--                                                                   value=""-->
-<!--                                                            placeholder="New password" required>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="form-group">-->
-<!--                                                            <label class="font-weight-bold"-->
-<!--                                                                   for="editRoles">Roles</label>-->
-<!--                                                            <select multiple size="2" class="form-control"-->
-<!--                                                                    id="editRoles"-->
-<!--                                                                    name="userRoles" required>-->
-<!--                                                                <option-->
-<!--                                                                        th:each="role : ${roles}"-->
-<!--                                                                        th:value="${role.role}"-->
-<!--                                                                        th:text="${role.role}"-->
-<!--                                                                        th:selected="${#lists.contains(user.roles, role)}">-->
-<!--                                                                </option>-->
-<!--                                                            </select>-->
-<!--                                                        </div>-->
                                                     </form>
                                                 </div>
                                                 <div class="col-sm-3"></div>
@@ -342,64 +262,64 @@
 
                                                           <div class="form-group">
                                                               <label class="font-weight-bold"
-                                                                     for="showId">ID</label>
+                                                                     for="userId">ID</label>
                                                               <input type="text"
                                                                      name="id"
-                                                                     id="showId"
+                                                                     id="userId"
                                                                      class="form-control"
                                                                      th:value="${user.id}"
                                                                      readonly>
                                                           </div>
                                                           <div class="form-group">
                                                               <label class="font-weight-bold"
-                                                                     for="editName">Name</label>
+                                                                     for="userName">Name</label>
                                                               <input type="text"
                                                                      name="name"
-                                                                     id="editName"
+                                                                     id="userName"
                                                                      class="form-control"
                                                                      th:value="${user.name}"
-                                                                     required>
+                                                                     readonly>
                                                           </div>
                                                           <div class="form-group">
                                                               <label class="font-weight-bold"
-                                                                     for="editSurname">Surname</label>
+                                                                     for="userSurname">Surname</label>
                                                               <input type="text"
                                                                      name="surname"
-                                                                     id="editSurname"
+                                                                     id="userSurname"
                                                                      class="form-control"
                                                                      th:value="${user.surname}"
-                                                                     required>
+                                                                     readonly>
                                                           </div>
                                                           <div class="form-group">
                                                               <label class="font-weight-bold"
-                                                                     for="editName">Phone</label>
+                                                                     for="userPhone">Phone</label>
                                                               <input type="text"
                                                                      name="phone"
-                                                                     id="editPhone"
+                                                                     id="userPhone"
                                                                      class="form-control"
                                                                      th:value="${user.phone}"
-                                                                     required>
+                                                                     readonly>
                                                           </div>
                                                           <div class="form-group">
                                                               <label class="font-weight-bold"
-                                                                     for="editEmail">Email</label>
+                                                                     for="userEmail">Email</label>
                                                               <input type="text"
                                                                      name="email"
-                                                                     id="editEmail"
+                                                                     id="userEmail"
                                                                      class="form-control"
                                                                      th:value="${user.email}"
-                                                                     required>
+                                                                     readonly>
                                                           </div>
                                                           <div class="form-group">
                                                               <label class="font-weight-bold"
-                                                                     for="editRoles">Roles</label>
-                                                              <select multiple size="2" class="form-control"  id="editRoles"
-                                                                      name="userRoles" required>
+                                                                     for="userRoles">Roles</label>
+                                                              <select multiple size="3" class="form-control"  id="userRoles"
+                                                                      name="roles" disabled>
                                                                   <option
-                                                                          th:each="role : ${rolesNames}"
+                                                                          th:each="role : ${roles}"
                                                                           th:value="${role.role}"
-                                                                          th:text="${role.role}"
-                                                                          th:selected="${#lists.contains(user.roles, role)}">
+                                                                          th:text="${role.role}">
+<!--                                                                          th:selected="${#lists.contains(user.roles, role)}">-->
                                                                   </option>
                                                               </select>
                                                           </div>
@@ -501,85 +421,6 @@
                                             </option>
                                         </select>
                                     </div>
-
-
-                                    <!-- <form th:action="@{/admin/users}" th:method="post" th:object="${newUser}">-->
-
-<!--                                  <div class="form-group">-->
-<!--                                      <label class="font-weight-bold"-->
-<!--                                             for="showId">ID</label>-->
-<!--                                      <input type="hidden"-->
-<!--                                             name="id"-->
-<!--                                             id="showId"-->
-<!--                                             class="form-control"-->
-<!--                                             th:value="${user.id}"-->
-<!--                                             readonly>-->
-<!--                                  </div>-->
-<!--                                  <div class="form-group">-->
-<!--                                      <label class="font-weight-bold"-->
-<!--                                             for="Name">Name</label>-->
-<!--                                      <input type="text"-->
-<!--                                             name="name"-->
-<!--                                             id="editName"-->
-<!--                                             class="form-control"-->
-<!--                                             th:field="${newUser.name}"-->
-<!--                                             value=""-->
-<!--                                             required>-->
-<!--                                  </div>-->
-<!--                                  <div class="form-group">-->
-<!--                                      <label class="font-weight-bold"-->
-<!--                                             for="editSurname">Surname</label>-->
-<!--                                      <input type="text"-->
-<!--                                             name="surname"-->
-<!--                                             id="editSurname"-->
-<!--                                             class="form-control"-->
-<!--                                             th:value="${newUser.surname}"-->
-<!--                                             required>-->
-<!--                                  </div>-->
-<!--                                  <div class="form-group">-->
-<!--                                      <label class="font-weight-bold"-->
-<!--                                             for="editName">Phone</label>-->
-<!--                                      <input type="text"-->
-<!--                                             name="phone"-->
-<!--                                             id="editPhone"-->
-<!--                                             class="form-control"-->
-<!--                                             th:value="${newUser.phone}"-->
-<!--                                             required>-->
-<!--                                  </div>-->
-<!--                                  <div class="form-group">-->
-<!--                                      <label class="font-weight-bold"-->
-<!--                                             for="editEmail">Email</label>-->
-<!--                                      <input type="text"-->
-<!--                                             name="email"-->
-<!--                                             id="editEmail"-->
-<!--                                             class="form-control"-->
-<!--                                             th:value="${newUser.email}"-->
-<!--                                             required>-->
-<!--                                  </div>-->
-<!--                                  <div class="form-group">-->
-<!--                                      <label class="font-weight-bold"-->
-<!--                                             for="editPassword">Password</label>-->
-<!--                                      <input type="password"-->
-<!--                                             class="form-control"-->
-<!--                                             name="password"-->
-<!--                                             id="editPassword"-->
-<!--                                             value=""-->
-<!--                                      placeholder="New password" required>-->
-<!--                                  </div>-->
-<!--                                  <div class="form-group">-->
-<!--                                      <label class="font-weight-bold"-->
-<!--                                             for="editRoles">Roles</label>-->
-<!--                                      <select multiple size="2" class="form-control"  id="editRoles"-->
-<!--                                              name="userRoles" required>-->
-<!--                                          <option-->
-<!--                                                  th:each="role : ${roles}"-->
-<!--                                                  th:value="${role.role}"-->
-<!--                                                  th:text="${role.role}">-->
-<!--&lt;!&ndash;                                                  th:selected="${#lists.contains(user.roles, role)}">&ndash;&gt;-->
-<!--                                          </option>-->
-<!--                                      </select>-->
-<!--                                  </div>-->
-
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-success" value="Add new user">
                                     </div>
